@@ -1,0 +1,30 @@
+notifications:
+    email: false
+
+language: c
+
+addons:
+    apt_packages:
+        - lib32bz2-1.0
+        - lib32ncurses5
+        - lib32z1
+
+before_script:
+    - sudo apt-add-repository 'deb http://archive.ubuntu.com/ubuntu trusty main universe multiverse restricted'
+    - sudo apt-get update -qq
+    - sudo apt-get install -y gcc-arm-none-eabi
+    - wget http://ftp.gnu.org/gnu/make/make-4.1.tar.gz
+    - tar xvf make-4.1.tar.gz
+    - cd make-4.1
+    - ./configure
+    - make
+    - sudo make install
+    - export PATH=/usr/local/bin/:$PATH
+    - cd ..
+    - rm -rf make-4.1
+
+before_install:
+  - git submodule update --init --recursive
+
+script:
+    make project PROJECT=queue PLATFORM=x86 CFLAGS='-std=c99'
