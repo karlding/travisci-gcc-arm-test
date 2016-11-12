@@ -4,6 +4,3 @@
 # $(T)_INC_DIRS: $(T)_DIR/inc
 # $(T)_SRC: $(T)_DIR/src{/$(PLATFORM}}/*.{c,s}
 # $(T)_INC: $(T)_DIR/inc{/$(PLATFORM}}/*.h
-
-# Specify the device library you want to include
-$(T)_DEPS := ms-common

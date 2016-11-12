@@ -24,6 +24,7 @@ CDEFINES :=
 CFLAGS := -Wall -Werror -g -Os -Wno-unused-variable -pedantic \
           -ffunction-sections -fdata-sections \
           -Wl,-Map=$(BIN_DIR)/$(PROJECT).map \
+		  -std=c99 \
           $(ARCH_CLAGS) $(addprefix -D,$(CDEFINES))
 
 # Linker flags
