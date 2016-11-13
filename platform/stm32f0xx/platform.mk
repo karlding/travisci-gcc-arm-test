@@ -23,6 +23,7 @@ CDEFINES := USE_STDPERIPH_DRIVER STM32F072
 CFLAGS := -Wall -Werror -g -Os -Wno-unused-variable -pedantic \
           -ffunction-sections -fdata-sections -fno-builtin -flto \
           --specs=nosys.specs --specs=nano.specs \
+		  -std=c99 \
           $(ARCH_CLAGS) $(addprefix -D,$(CDEFINES))
 
 # Linker flags
