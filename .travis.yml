@@ -1,12 +1,12 @@
 notifications:
-    email: false
+  email: false
 
 language: c
 
 # add platforms to build matrix
 env:
-    - PLATFORM=x86
-    - PLATFORM=stm32f0xx
+  - PLATFORM=x86
+  - PLATFORM=stm32f0xx
 
 before_script:
   # install GCC ARM from GNU ARM Embedded Toolchain PPA
